@@ -1,8 +1,8 @@
 # ⚡ [과제 BR-B] FocusGuard AI — 내 논문을 반영한 애플리케이션
 
 > **기반 논문 (과제 10)**: 『AI 에이전트 기반 웹 개발 환경에서 대기 시간 중 작업자의 분할 주의(Divided Attention)와 인터랙션 행동 분석 ─ 자취생 맞춤형 웹서비스 '혼밥비서' 개발 사례를 중심으로 ─』 (주한태, 2026.10, N=1, 36회 세션)  
-> **결과물 공개 URL (13번 앱 단독)**: [https://gksxogksxo1001-sketch.github.io/project13/](https://gksxogksxo1001-sketch.github.io/project13/)  
-> **12번 사이트 대표작 연결 URL**: [https://gksxogksxo1001-sketch.github.io/project12/](https://gksxogksxo1001-sketch.github.io/project12/) (대표작 2 자리에서 `[⚡ 13번 앱 바로 실행하기]` 클릭 시 `app/index.html` 및 공개 URL 즉시 열람)  
+> **결과물 공개 URL (로그인 불필요 · 시크릿 창 즉시 열람)**: [https://gksxogksxo1001-sketch.github.io/project12/app/index.html](https://gksxogksxo1001-sketch.github.io/project12/app/index.html)  
+> **12번 사이트 대표작 연결 URL**: [https://gksxogksxo1001-sketch.github.io/project12/#projects](https://gksxogksxo1001-sketch.github.io/project12/#projects) (대표작 2 자리에서 `[⚡ 13번 앱 바로 실행하기]` 클릭 시 즉시 열람)  
 > **작성자**: 주한태 (Ju Han-tae · `gksxogksxo1001@gmail.com`)  
 > **보안 준수**: 실제 개인정보 0건, 비밀값(API Key 등) 0건, 로그인 없이 새 시크릿 창·새 임시 폴더 즉시 실행 보장
 
@@ -26,7 +26,7 @@
 ## 🔍 2. 짧은 확인 방법 (1분 확인 가이드)
 
 1. **웹에서 바로 열기 (로그인 불필요 · 시크릿 창 호환)**:
-   - **13번 앱 직링크**: [https://gksxogksxo1001-sketch.github.io/project13/](https://gksxogksxo1001-sketch.github.io/project13/)
+   - **13번 앱 공개 URL 직링크**: [https://gksxogksxo1001-sketch.github.io/project12/app/index.html](https://gksxogksxo1001-sketch.github.io/project12/app/index.html)
    - **12번 포트폴리오 사이트 대표작 자리 확인**: [https://gksxogksxo1001-sketch.github.io/project12/#projects](https://gksxogksxo1001-sketch.github.io/project12/#projects) ➔ **대표작 2 (과제 BR-B / 13번 완료작)** 카드에서 바로 실행 가능.
 2. **내 컴퓨터(새 임시 폴더)에서 실행 묶음(ZIP)으로 열기**:
    - `project13_submission_package.zip` 압축을 새 임시 폴더에 풀고 `index.html`을 더블클릭하면 별도 서버나 설치 없이 브라우저에서 모든 기능이 100% 작동합니다.

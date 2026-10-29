@@ -2,8 +2,8 @@
 
 > **애플리케이션명**: **FocusGuard AI (포커스가드 AI)** — AI 에이전트 대기 시간 분할 주의 방어 & 3지선다 의사결정 워크벤치  
 > **기반 학술 논문 (과제 10)**: 『AI 에이전트 기반 웹 개발 환경에서 대기 시간 중 작업자의 분할 주의(Divided Attention)와 인터랙션 행동 분석 ─ 자취생 맞춤형 웹서비스 '혼밥비서' 개발 사례를 중심으로 ─』 (주한태, 2026.10, N=1, 36회 세션)  
-> **12번 포트폴리오 연결 사이트**: [https://gksxogksxo1001-sketch.github.io/project12/](https://gksxogksxo1001-sketch.github.io/project12/)  
-> **13번 앱 공개 URL**: [https://gksxogksxo1001-sketch.github.io/project13/](https://gksxogksxo1001-sketch.github.io/project13/) (및 12번 사이트 내 직접 호스팅: `app/index.html`)
+> **12번 포트폴리오 연결 사이트**: [https://gksxogksxo1001-sketch.github.io/project12/#projects](https://gksxogksxo1001-sketch.github.io/project12/#projects)  
+> **13번 앱 공개 URL**: [https://gksxogksxo1001-sketch.github.io/project12/app/index.html](https://gksxogksxo1001-sketch.github.io/project12/app/index.html) (로그인 없이 시크릿 창 즉시 실행)
 
 ---
 
