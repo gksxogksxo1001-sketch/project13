@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+<html lang="ko" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,40 +15,56 @@
   <header class="top-nav">
     <div class="container nav-inner">
       <div class="brand-area">
-        <span class="brand-badge">과제 BR-B · 13번 대표작 앱</span>
-        <a href="#top" class="brand-title">⚡ FocusGuard AI <span class="brand-sub">논문 반영 워크벤치</span></a>
+        <span class="brand-badge">과제 BR-B · 대표작 앱</span>
+        <a href="#top" class="brand-title">⚡ FocusGuard AI <span class="brand-sub">내 논문을 반영한 워크벤치</span></a>
       </div>
-      <nav class="nav-links" aria-label="주요 기능 이동">
-        <a href="#task-1" class="nav-link">① 대기시간 진단·타이머</a>
-        <a href="#task-2" class="nav-link">② 3지선다 1줄 요약기</a>
-        <a href="#task-3" class="nav-link">③ 프롬프트·36회 실측비교</a>
-        <a href="#paper-evidence" class="nav-link">📊 논문 규칙 대조</a>
+      <nav class="nav-links" aria-label="주요 기능 바로가기">
+        <a href="#task-1" class="nav-link">STEP 1. 대기시간 진단·타이머</a>
+        <a href="#task-2" class="nav-link">STEP 2. 3지선다 1줄 요약기</a>
+        <a href="#task-3" class="nav-link">STEP 3. 프롬프트·36회 비교</a>
+        <a href="#quick-verify" class="nav-link">✅ 짧은 확인·판단 3줄</a>
       </nav>
       <div class="nav-actions">
-        <a href="https://gksxogksxo1001-sketch.github.io/project12/" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-outline">
-          🏠 12번 포트폴리오 사이트 ↗
+        <a href="https://gksxogksxo1001-sketch.github.io/project12/#projects" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-outline">
+          🏠 12번 포트폴리오 대표작 자리 ↗
         </a>
-        <button id="theme-toggle" class="btn-icon" title="다크/라이트 모드 전환" aria-label="테마 전환">☀️</button>
+        <button id="theme-toggle" class="btn-theme" title="라이트/다크 모드 전환" aria-label="테마 전환">🌙 다크 모드</button>
       </div>
     </div>
   </header>
 
   <main id="top" class="main-content">
     <!-- =====================================================================
-         첫 화면 (Hero Section): BRB-C01, BRB-C02, BRB-C03 필수 요소 완비
-         1) 10번 논문 제목 명시
-         2) "이 앱은 누구를 어떻게 돕습니다" ("○○인 사람이 △△할 때 이 앱이 □□을 해 준다") 한 문장 명시
-         3) 처음 온 사람이 설명 없이 바로 해 볼 수 있는 '사용자가 할 일 3가지'
+         첫 화면 (Hero Section): 탁 트인 온보딩 & BRB-C01 ~ C03, C10, C11 완비
     ====================================================================== -->
     <section class="hero-section">
       <div class="container">
-        <!-- 논문 제목 배너 (BRB-C03) -->
+        <!-- 처음 온 사용자를 위한 친절한 웰컴 & 원클릭 자동 시연 바 -->
+        <div class="welcome-tour-banner">
+          <div class="welcome-left">
+            <span class="welcome-pill">👋 처음 방문하셨나요?</span>
+            <p class="welcome-text">
+              복잡한 설정이나 로그인 없이 <strong>아래 [원클릭 자동 시연] 버튼</strong>을 누르거나 <strong>STEP 1 ➔ STEP 2 ➔ STEP 3 카드</strong>를 순서대로 눌러 보세요!
+            </p>
+          </div>
+          <div class="welcome-actions">
+            <button type="button" id="btn-auto-tour" class="btn btn-primary btn-tour">
+              ✨ 원클릭 자동 시연 (할 일 1·2·3 한 번에 체험)
+            </button>
+            <a href="#task-1" class="btn btn-secondary">직접 해보기 ↓</a>
+          </div>
+        </div>
+
+        <!-- 자동 시연 진행 상태 토스트 -->
+        <div id="tour-status-banner" class="tour-status-banner hidden" role="status" aria-live="polite"></div>
+
+        <!-- 10번 논문 제목 배너 (BRB-C03) -->
         <div class="paper-origin-banner">
           <div class="origin-tag-row">
             <span class="badge badge-primary">📄 기반 학술 논문 (과제 10)</span>
             <span class="badge badge-success">단일 피험자 N=1 · 총 36회 세션 실측 데이터 100% 반영</span>
             <a href="https://gksxogksxo1001-sketch.github.io/project12/paper/index.html" target="_blank" rel="noopener noreferrer" class="origin-paper-link">
-              논문 원문 웹 뷰어 열기 (로그인 불필요) ↗
+              10번 논문 원문 웹 뷰어 열기 (로그인 불필요) ↗
             </a>
           </div>
           <h2 class="paper-title-display">
@@ -57,61 +73,77 @@
           </h2>
         </div>
 
-        <!-- 앱 메인 타이틀 및 "누구를 어떻게 돕는가" 한 문장 (BRB-C01, BRB-C03) -->
+        <!-- 메인 히어로 박스 -->
         <div class="hero-core-box">
-          <div class="hero-eyebrow">FROM PAPER TO APPLICATION · 논문이 밝힌 사실을 실무 도구로 바꾸다</div>
+          <div class="hero-eyebrow">FROM RESEARCH TO REAL-WORLD TOOL · 논문이 밝힌 사실을 실무 도구로 바꾸다</div>
           <h1 class="hero-main-title">
-            AI 코딩 에이전트 대기 시간 분할 주의 방어 &amp; 3지선다 의사결정 워크벤치
+            AI 에이전트 응답을 기다리는 동안 깨지는 집중력,<br>
+            <span class="title-highlight">논문의 실측 규칙(16초 · 12.7초 · 78.3%)</span>으로 지켜 드립니다.
           </h1>
 
-          <!-- 통과 기준 BRB-C01 & BRB-C03 핵심 한 문장 박스 -->
-          <div class="one-sentence-card" role="region" aria-label="이 앱이 누구를 어떻게 돕는가">
+          <!-- 통과 기준 BRB-C01, BRB-C03, BRB-C10: "이 앱은 누구를 어떻게 돕습니다" 한 문장 -->
+          <div class="one-sentence-card" role="region" aria-label="이 앱은 누구를 어떻게 돕는가">
             <div class="sentence-header">
-              <span class="sentence-badge">🎯 이 앱은 누구를 어떻게 돕는가 (앱이 될 한 문장 · BRB-C01 / BRB-C03)</span>
+              <span class="sentence-badge">🎯 이 앱은 누구를 어떻게 돕습니다 (앱이 될 한 문장 · BRB-C01 / BRB-C03 / BRB-C10)</span>
             </div>
-            <p class="sentence-main">
-              <strong>“AI 코딩 에이전트(Antigravity, Copilot 등)와 협업하는 웹 개발자</strong>가 <strong>16초 이상의 응답 대기 시간 동안 에디터를 힐끔거리며 주의가 분산되거나(12.7초 주기 시각적 폴링 91.7%) 장문의 3지선다 모달에서 2번째 옵션만 편향 선택할 때(78.3%)</strong>, 이 앱이 논문의 36회 실측 결과와 3대 제언 규칙을 써서 <strong>① 대기 구간별 맞춤형 UI·콘솔 검수 가이드와 무폴링 청각 타이머 작동, ② 3지선다 장문 옵션의 '1줄 핵심 + 위험도' 요약 변환, ③ 에러 로그 결합 3~5줄 구조화 프롬프트 생성 및 36회 원자료 실시간 비교를 해 줍니다.”</strong>
+            <p class="sentence-easy">
+              <strong>쉽게 말하면:</strong> AI 코딩 도구에게 작업을 시켜 놓고 <strong>10~60초 동안 기다릴 때</strong>, 언제 끝날지 몰라 화면을 자꾸 힐끔거리거나 길고 복잡한 3지선다 질문에 지치는 개발자를 돕는 <strong>‘대기 시간 맞춤 가이드 &amp; 선택지 1줄 요약 앱’</strong>입니다.
             </p>
-            <p class="sentence-sub">
-              💡 <strong>한 줄 요약:</strong> 이 앱은 AI 에이전트에게 코딩을 지시한 뒤 기다리는 개발자가 <strong>12.7초마다 화면을 힐끔거리는 주의 분할 비용</strong>과 <strong>78.3%의 중간 옵션 맹목 선택 편향</strong>을 줄이고, 대기 시간을 생산적인 자체 검수 시간으로 바꾸도록 돕습니다.
+            <p class="sentence-main">
+              <strong>[정식 한 문장 정의]:</strong> “<strong>AI 코딩 에이전트(Antigravity, Copilot 등)와 협업하는 웹 개발자</strong>가 <strong>16초 이상의 응답 대기 시간 동안 에디터를 힐끔거리며 주의가 분산되거나(12.7초 주기 시각적 폴링 91.7%) 장문의 3지선다 모달에서 2번째 옵션만 편향 선택할 때(78.3%)</strong>, 이 앱이 논문의 36회 실측 결과([표 2] 구간별 행동 확률)와 3대 제언 규칙을 써서 <strong>① 대기 구간별 맞춤형 UI·콘솔 검수 가이드와 무폴링 청각 타이머 작동, ② 3지선다 장문 옵션의 '1줄 핵심 + 위험도' 요약 변환, ③ 에러 로그 결합 3~5줄 구조화 프롬프트 생성 및 36회 원자료 실시간 비교를 해 줍니다.”</strong>
             </p>
           </div>
 
-          <!-- 통과 기준 BRB-C02: 사용자가 앱에서 실제로 할 일 세 가지 -->
+          <!-- 통과 기준 BRB-C11: 처음 보는 동료 한 사람의 한 줄 감상 (실명 없음) -->
+          <div class="peer-review-banner">
+            <div class="peer-review-badge">💬 처음 써 본 동료의 한 줄 감상 (실명 없음 · BRB-C11)</div>
+            <p class="peer-review-quote">
+              “처음 열자마자 첫 화면에 논문 제목과 누구를 어떻게 돕는지가 한 문장으로 시원하게 적혀 있어서, 아무 설명 없이도 대기 시간 25초를 넣어 무폴링 타이머를 돌려 보고 3지선다 장문 옵션을 1줄로 요약해 바로 써 볼 수 있었습니다.”
+              <span class="peer-review-author">— 동료 1 (설명 없이 첫 판을 직접 써 본 동료 · 비식별 기록)</span>
+            </p>
+          </div>
+
+          <!-- 통과 기준 BRB-C02: 사용자가 앱에서 실제로 할 일 세 가지 (직관적인 3-Step 카드) -->
           <div class="three-tasks-overview">
             <div class="tasks-header-row">
-              <h3 class="tasks-overview-title">🚀 처음 온 분을 위한 1분 안내 — 이 앱에서 사용자가 실제로 할 일 세 가지 (BRB-C02)</h3>
-              <span class="tasks-hint">아래 카드를 클릭하거나 바로 스크롤하여 설명 없이 즉시 실행해 보세요.</span>
+              <h3 class="tasks-overview-title">🧭 처음 온 분을 위한 3단계 사용법 — 사용자가 실제로 할 일 세 가지 (BRB-C02)</h3>
+              <span class="tasks-hint">카드를 누르면 해당 기능으로 부드럽게 이동합니다.</span>
             </div>
             <div class="tasks-grid-3">
               <a href="#task-1" class="task-step-card">
-                <div class="step-num-row">
-                  <span class="step-num">할 일 1</span>
-                  <span class="step-rule-tag">논문 [표 2] 16초 임계치 &amp; 12.7초 폴링 규칙</span>
+                <div>
+                  <div class="step-num-row">
+                    <span class="step-num">할 일 1 (STEP 1)</span>
+                    <span class="step-rule-tag">논문 [표 2] 16초 임계치 &amp; 12.7초 폴링</span>
+                  </div>
+                  <h4>⏱️ 대기 시간(초)을 넣고 ‘무폴링 청각 타이머 &amp; 검수 체크리스트’ 돌리기</h4>
+                  <p>예상 대기 시간(초)을 입력하면 <strong>0~15초(IDE 주시 80%) / 16~30초(화면 검수 54.5%) / 31초+(화면 검수 66.7%)</strong> 규칙으로 지금 할 일을 알려주고, 완료 알림음으로 <strong>12.7초마다 화면을 힐끔거리는 횟수</strong>를 0회로 줄여 줍니다.</p>
                 </div>
-                <h4>작업 대기 시간(초)을 넣고 ‘무폴링 청각 타이머 &amp; 검수 체크리스트’ 돌리기</h4>
-                <p>에이전트 예상 대기 시간(초)을 입력하면 <strong>0~15초(IDE 주시 80%) / 16~30초(화면 검수 54.5%) / 31초+(화면 검수 66.7%)</strong> 규칙에 맞춰 지금 할 F12·반응형 검수 할 일을 알려주고, 완료 비프음으로 <strong>12.7초마다 화면을 힐끔거리는 횟수</strong>를 0회로 줄여 줍니다.</p>
-                <span class="step-cta">할 일 1 바로 해보기 ↓</span>
+                <span class="step-cta">STEP 1 바로 해보기 →</span>
               </a>
 
               <a href="#task-2" class="task-step-card">
-                <div class="step-num-row">
-                  <span class="step-num">할 일 2</span>
-                  <span class="step-rule-tag">논문 4.3절 78.3% 중간 옵션 편향 교정 규칙</span>
+                <div>
+                  <div class="step-num-row">
+                    <span class="step-num">할 일 2 (STEP 2)</span>
+                    <span class="step-rule-tag">논문 4.3절 78.3% 중간 옵션 편향 교정</span>
+                  </div>
+                  <h4>⚖️ 에이전트의 3지선다 장문 모달을 ‘1줄 핵심 + 위험도 뱃지’로 요약·비교하기</h4>
+                  <p>에이전트가 띄운 복잡한 3가지 옵션을 넣거나 예시를 불러오면, 긴 설명 때문에 무심코 <strong>2번째 중간 옵션만 누르는 편향(78.3%)</strong>을 경고하고 옵션별 <strong>핵심 차이점 1줄·위험도·적합도 점수</strong>로 요약해 추천합니다.</p>
                 </div>
-                <h4>에이전트의 3지선다 장문 모달을 ‘1줄 핵심 + 위험도 뱃지’로 요약·비교하기</h4>
-                <p>에이전트가 띄운 복잡한 3가지 옵션을 넣거나 예시를 불러오면, 긴 설명 때문에 무심코 <strong>2번째 중간 옵션만 누르는 편향(78.3%)</strong>을 경고하고 옵션별 <strong>핵심 차이점 1줄·위험도·인지 부하 점수</strong>로 요약해 최적 선택지를 추천합니다.</p>
-                <span class="step-cta">할 일 2 바로 해보기 ↓</span>
+                <span class="step-cta">STEP 2 바로 해보기 →</span>
               </a>
 
               <a href="#task-3" class="task-step-card">
-                <div class="step-num-row">
-                  <span class="step-num">할 일 3</span>
-                  <span class="step-rule-tag">논문 3.2절 구조화 프롬프트 &amp; 36회 원자료 대조</span>
+                <div>
+                  <div class="step-num-row">
+                    <span class="step-num">할 일 3 (STEP 3)</span>
+                    <span class="step-rule-tag">논문 3.2절 프롬프트 &amp; 36회 원자료 비교</span>
+                  </div>
+                  <h4>🛠️ 에러 로그로 ‘4줄 구조화 프롬프트’를 만들고 논문 36회 데이터와 비교하기</h4>
+                  <p>10분 자체 디버깅 후 확인한 에러와 원하는 UI 흐름을 입력해 <strong>에이전트 1회차 성공률을 높이는 4줄 프롬프트</strong>를 만들고, 내 대기 세션을 기록해 <strong>논문 원자료(36건) 통계와 실시간 비교·다운로드</strong>합니다.</p>
                 </div>
-                <h4>에러 로그를 ‘3~5줄 구조화 프롬프트’로 변환하고 내 세션을 논문 36회 데이터와 비교하기</h4>
-                <p>10분 자체 디버깅 후 파악한 에러와 원하는 UI 흐름을 입력해 <strong>에이전트 1회차 성공률을 높이는 4줄 프롬프트</strong>를 만들고, 내가 방금 겪은 대기 세션을 기록해 <strong>논문 원자료(36건) 통계와 실시간 비교·내보내기</strong>를 수행합니다.</p>
-                <span class="step-cta">할 일 3 바로 해보기 ↓</span>
+                <span class="step-cta">STEP 3 바로 해보기 →</span>
               </a>
             </div>
           </div>
@@ -119,8 +151,8 @@
           <!-- 통과 기준 BRB-C05: 잘못된 입력 방어 원클릭 테스트 바 -->
           <div class="edge-test-bar" id="edge-test-bar">
             <div class="edge-bar-left">
-              <span class="edge-badge">🛡️ BRB-C05 예외 방어 검증</span>
-              <span class="edge-title">잘못된 입력에도 앱이 멈추지 않는지 1초 만에 테스트해 보세요:</span>
+              <span class="edge-badge">🛡️ BRB-C05 잘못된 입력 방어 검증</span>
+              <span class="edge-title">빈칸·음수·문자열을 넣어도 앱이 멈추지 않는지 버튼 하나로 시험해 보세요:</span>
             </div>
             <div class="edge-btn-group">
               <button type="button" class="btn btn-xs btn-edge" data-edge="empty">빈 값("") 입력</button>
@@ -132,7 +164,7 @@
             </div>
           </div>
 
-          <!-- 전역 입력 방어 상태 알림 배너 (잘못된 입력 발생 시 즉시 표시) -->
+          <!-- 전역 입력 방어 상태 알림 배너 -->
           <div id="global-guard-alert" class="guard-alert-box hidden" role="status" aria-live="polite">
             <div class="guard-alert-icon">🛡️</div>
             <div class="guard-alert-content">
@@ -145,38 +177,40 @@
     </section>
 
     <!-- =====================================================================
-         [할 일 1] 대기 시간 구간 진단 & 무폴링(Zero-Polling) 청각 타이머
-         논문 [표 2] 실측 수치(0~15초 80.0%, 16~30초 54.5%, 31초+ 66.7%) 및
-         평균 12.7초 시각적 폴링(91.7%) 규칙 실제 적용
+         [STEP 1 / 할 일 1] 대기 시간 구간 진단 & 무폴링(Zero-Polling) 청각 타이머
     ====================================================================== -->
     <section id="task-1" class="section workbench-section">
       <div class="container">
         <div class="section-header-bar">
-          <div>
-            <span class="task-pill">할 일 1 · BRB-C02 / BRB-C04</span>
-            <h2 class="section-title">⏱️ 에이전트 대기 시간 진단 &amp; 무폴링(Zero-Polling) 검수 타이머</h2>
-            <p class="section-desc">
-              논문 [표 2]의 <strong>16초 행동 전환 임계치</strong>와 <strong>평균 12.7초 시각적 폴링 주기(발생률 91.7%)</strong> 수식을 실제로 적용해, 대기 시간 동안 무엇을 해야 할지 안내하고 완료 알림음으로 불필요한 시선 분산을 막아줍니다.
-            </p>
+          <div class="step-header-top">
+            <span class="task-pill">STEP 1 · 사용자가 할 일 첫 번째 (BRB-C02 / BRB-C04)</span>
+            <span class="pass-criteria-pill">✅ 통과 확인: 구간별 행동 확률(80% / 54.5% / 66.7%)과 폴링 방어 횟수가 계산되면 정상!</span>
           </div>
+          <h2 class="section-title">⏱️ 에이전트 대기 시간 진단 &amp; 무폴링(Zero-Polling) 검수 타이머</h2>
+          <p class="section-desc">
+            논문 [표 2]의 <strong>16초 행동 전환 임계치</strong>와 <strong>평균 12.7초 시각적 폴링 주기(발생률 91.7%)</strong>를 실제로 계산합니다. 처음 오셨다면 <strong>예시 버튼 3개 중 하나</strong>를 클릭해 보세요!
+          </p>
         </div>
 
         <div class="workbench-grid-2">
           <!-- 좌측: 입력 및 프리셋 컨트롤 -->
           <div class="panel-card">
+            <div class="friendly-tip-box">
+              <strong>💡 처음 사용하는 분을 위한 팁:</strong> 아래 <strong>[단순 수정 12초]</strong>, <strong>[중간 작업 25초]</strong>, <strong>[복합 추론 48초]</strong> 버튼을 눌러 오른쪽 처방이 어떻게 바뀌는지 바로 확인해 보세요.
+            </div>
             <h3 class="panel-title">1. 에이전트 지시 작업 및 예상 대기 시간(초) 입력</h3>
             
             <div class="preset-group">
-              <span class="preset-label">⚡ 논문 실측 구간별 원클릭 예시:</span>
+              <span class="preset-label">⚡ 논문 실측 구간별 원클릭 예시 버튼:</span>
               <div class="preset-buttons">
-                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="12" data-task="[냉장고] 단순 CSS z-index 및 모달 여백 수정">
-                  단순 수정 (12초 · 0~15초 구간)
+                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="12" data-task="[예시 데이터] 냉장고 모달 팝업 단순 CSS 여백 수정">
+                  🟢 단순 수정 (12초 · 0~15초 구간)
                 </button>
-                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="25" data-task="[반응형 UI] 모바일 뷰포트(375px) 그리드 카드 줄바꿈 수정">
-                  중간 작업 (25초 · 16~30초 구간)
+                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="25" data-task="[예시 데이터] 모바일 뷰포트(375px) 그리드 카드 줄바꿈 수정">
+                  🔵 중간 작업 (25초 · 16~30초 구간)
                 </button>
-                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="48" data-task="[식약처 API] 영양성분 비동기 fetch 파이프라인 및 에러 디버깅">
-                  복합 추론 (48초 · 31초+ 구간)
+                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="48" data-task="[예시 데이터] 공공 영양성분 Open API 비동기 호출 및 에러 디버깅">
+                  🟠 복합 추론 (48초 · 31초+ 구간)
                 </button>
               </div>
             </div>
@@ -184,7 +218,7 @@
             <form id="latency-form" class="form-stack" novalidate>
               <div class="form-group">
                 <label for="input-task-name">지시한 개발 작업 내용 (비워두어도 자동 기본값 처리)</label>
-                <input type="text" id="input-task-name" class="form-input" value="[반응형 UI] 모바일 뷰포트(375px) 냉장고 그리드 카드 깨짐 수정" placeholder="예: 식약처 Open API 비동기 호출 및 F12 콘솔 에러 수정">
+                <input type="text" id="input-task-name" class="form-input" value="[예시 데이터] 모바일 뷰포트(375px) 냉장고 그리드 카드 깨짐 수정" placeholder="예: 공공 Open API 비동기 호출 및 F12 콘솔 에러 수정">
               </div>
 
               <div class="form-row-2">
@@ -217,7 +251,6 @@
               </div>
             </form>
 
-            <!-- 입력 방어 피드백 박스 (할 일 1 전용) -->
             <div id="latency-guard-msg" class="inline-guard-msg hidden" role="alert"></div>
 
             <!-- 실시간 타이머 디스플레이 -->
@@ -256,7 +289,7 @@
               </div>
               <div class="p-stat-card">
                 <span class="p-stat-label">시각적 폴링(힐끔거림) 감축</span>
-                <strong class="p-stat-val text-accent" id="stat-polling-count">2.0회 ➔ 0회</strong>
+                <strong class="p-stat-val text-accent" id="stat-polling-count">2회 힐끔거림 ➔ 0회</strong>
                 <span class="p-stat-sub" id="stat-polling-detail">평균 12.3초 주기 경계 감시 제거</span>
               </div>
               <div class="p-stat-card">
@@ -300,14 +333,14 @@
             <!-- 대기 시간 동안 수행할 맞춤형 비동기 검수 체크리스트 -->
             <div class="checklist-box">
               <div class="checklist-header">
-                <h4>✅ 지금 대기 시간 동안 수행할 추천 행동 체크리스트</h4>
+                <h4>✅ 지금 대기 시간 동안 수행할 추천 행동 체크리스트 (클릭해 완료 체크)</h4>
                 <span class="checklist-progress" id="checklist-progress-text">0 / 3 완료 (0%)</span>
               </div>
               <p class="checklist-prescription" id="prescription-message">
                 논문 4.1절 결과: 대기 시간이 16초를 넘으면 유희로 이탈하기보다 <strong>브라우저 F12 콘솔 에러 및 모바일 뷰포트(375px)를 비동기 검수</strong>할 때 작업 복귀 비용(Mark et al., 2008)이 가장 낮습니다.
               </p>
               <ul class="action-checklist" id="dynamic-checklist">
-                <!-- JS에서 구간별로 동적 렌더링 및 체크 이벤트 연결 -->
+                <!-- JS 동적 렌더링 -->
               </ul>
             </div>
           </div>
@@ -316,28 +349,27 @@
     </section>
 
     <!-- =====================================================================
-         [할 일 2] 3지선다 모달 '1줄 핵심 + 위험도' 요약기 & 78.3% 편향 교정기
-         논문 4.3절(23회 중 18회=78.3% 2번째 중간 옵션 선택 편향) 및
-         5.2절 제언 2(옵션당 핵심 차이점 1줄 + 위험도 요약 제시) 실제 적용
+         [STEP 2 / 할 일 2] 3지선다 모달 '1줄 핵심 + 위험도' 요약기 & 78.3% 편향 교정기
     ====================================================================== -->
     <section id="task-2" class="section workbench-section alt-bg">
       <div class="container">
         <div class="section-header-bar">
-          <div>
-            <span class="task-pill">할 일 2 · BRB-C02 / BRB-C04</span>
-            <h2 class="section-title">⚖️ 에이전트 3지선다 모달 ‘1줄 핵심 + 위험도’ 요약기 (78.3% 중간 옵션 편향 교정)</h2>
-            <p class="section-desc">
-              논문 4.3절에서 밝혀진 <strong>“1번은 너무 단순해서, 3번은 설명이 너무 길어 읽지 않고 78.3%(18/23회) 확률로 2번째 옵션만 고르는 편향”</strong>을 해결합니다. 에이전트의 3가지 옵션을 넣으면 <strong>핵심 차이점 1줄과 기술적 위험도</strong>로 요약해 줍니다.
-            </p>
+          <div class="step-header-top">
+            <span class="task-pill">STEP 2 · 사용자가 할 일 두 번째 (BRB-C02 / BRB-C04)</span>
+            <span class="pass-criteria-pill">✅ 통과 확인: 3개 옵션이 ‘1줄 요약 + 위험도 뱃지 + 적합도 점수’로 변환되면 정상!</span>
           </div>
+          <h2 class="section-title">⚖️ 에이전트 3지선다 모달 ‘1줄 핵심 + 위험도’ 요약기 (78.3% 중간 옵션 편향 교정)</h2>
+          <p class="section-desc">
+            논문 4.3절에서 밝혀진 <strong>“1번은 너무 단순해서, 3번은 설명이 너무 길어 읽지 않고 78.3%(18/23회) 확률로 2번째 옵션만 고르는 편향”</strong>을 해결합니다.
+          </p>
         </div>
 
         <!-- 프리셋 시나리오 버튼 -->
         <div class="preset-bar-card">
-          <span class="preset-label">📂 논문 속 실제 '혼밥비서' 3지선다 모달 사례 불러오기:</span>
+          <span class="preset-label">📂 처음 오셨다면 예시 시나리오 버튼을 눌러 바로 비교해 보세요:</span>
           <div class="preset-buttons">
             <button type="button" class="btn btn-xs btn-secondary modal-preset" data-scenario="api">
-              사례 A: 식약처 영양성분 API null 에러 처리 (세션 #13)
+              사례 A: 공공 영양성분 API null 에러 처리 (세션 #13)
             </button>
             <button type="button" class="btn btn-xs btn-secondary modal-preset" data-scenario="dday">
               사례 B: 냉장고 유통기한 D-day 계산 로직 (세션 #2)
@@ -389,14 +421,12 @@
               <!-- JS 동적 업데이트 -->
             </div>
 
-            <!-- 3개 옵션 요약 카드 리스트 -->
             <div class="summarized-options-list" id="summarized-options-list">
               <!-- JS 동적 렌더링 -->
             </div>
 
-            <!-- 사용자가 최종 선택한 옵션 시뮬레이션 피드백 -->
             <div class="decision-feedback-box" id="decision-feedback-box">
-              <span>👆 위 요약 카드 중 하나를 <strong>[이 옵션 채택하기]</strong>로 눌러 의사결정을 완료해 보세요.</span>
+              <span>👆 위 요약 카드 중 하나를 <strong>[옵션 채택하기]</strong>로 눌러 의사결정을 완료해 보세요.</span>
             </div>
           </div>
         </div>
@@ -404,19 +434,19 @@
     </section>
 
     <!-- =====================================================================
-         [할 일 3] 에러 로그 결합 3~5줄 구조화 프롬프트 생성기 &
-         나의 대기 세션 기록 vs 논문 36회 원자료 실시간 대조
+         [STEP 3 / 할 일 3] 에러 로그 결합 4줄 구조화 프롬프트 생성기 & 36회 원자료 대조
     ====================================================================== -->
     <section id="task-3" class="section workbench-section">
       <div class="container">
         <div class="section-header-bar">
-          <div>
-            <span class="task-pill">할 일 3 · BRB-C02 / BRB-C04</span>
-            <h2 class="section-title">🛠️ 구조화 디버깅 프롬프트 생성 &amp; 논문 36회 실측 원자료 비교·기록</h2>
-            <p class="section-desc">
-              논문 3.2절·4.4절 결과(<strong>“10분 자체 디버깅 후 에러 로그와 UI/UX 가시성 요구를 결합한 3~5줄 구조화 프롬프트가 에이전트 연속 실패와 멘탈 소진을 방지”</strong>)를 도구화하고, 내 작업 세션을 논문 원자료(36회)에 추가해 실시간으로 통계를 비교합니다.
-            </p>
+          <div class="step-header-top">
+            <span class="task-pill">STEP 3 · 사용자가 할 일 세 번째 (BRB-C02 / BRB-C04)</span>
+            <span class="pass-criteria-pill">✅ 통과 확인: 4줄 프롬프트가 생성되고 세션 추가 시 36건 ➔ 37건으로 통계가 갱신되면 정상!</span>
           </div>
+          <h2 class="section-title">🛠️ 구조화 디버깅 프롬프트 생성 &amp; 논문 36회 실측 원자료 비교·기록</h2>
+          <p class="section-desc">
+            논문 3.2절·4.4절 결과(<strong>“10분 자체 디버깅 후 에러 로그와 UI/UX 가시성 요구를 결합한 3~5줄 구조화 프롬프트가 에이전트 연속 실패와 멘탈 소진을 방지”</strong>)를 도구화하고, 내 작업 세션을 논문 공개 데이터(36회)와 실시간으로 비교합니다.
+          </p>
         </div>
 
         <div class="workbench-grid-2">
@@ -427,7 +457,7 @@
               <div class="form-row-2">
                 <div class="form-group">
                   <label for="pb-module">대상 기능 / 모듈명</label>
-                  <input type="text" id="pb-module" class="form-input" value="[혼밥비서] 식약처 영양성분 API 연동 모달" placeholder="예: [냉장고] 유통기한 D-day 정렬">
+                  <input type="text" id="pb-module" class="form-input" value="[예시 모듈] 공공 영양성분 API 연동 모달" placeholder="예: [냉장고] 유통기한 D-day 정렬">
                 </div>
                 <div class="form-group">
                   <label for="pb-debug-min">사전 자체 디버깅 시간 (논문 기준: 10분)</label>
@@ -456,7 +486,7 @@
             <div class="generated-prompt-box">
               <div class="gp-header">
                 <span>생성된 에이전트 지시 프롬프트 (논문 3.2절·5.2절 규격)</span>
-                <span class="gp-status" id="gp-copy-status">즉시 사용 가능</span>
+                <span class="gp-status" id="gp-copy-status">즉시 복사 가능</span>
               </div>
               <pre id="generated-prompt-output" class="gp-pre"></pre>
             </div>
@@ -464,7 +494,7 @@
 
           <!-- 우측: 내 세션 추가 & 논문 원자료(36건) 실시간 비교 -->
           <div class="panel-card result-panel">
-            <h3 class="panel-title">2. 나의 에이전트 대기 세션 기록 &amp; 논문 원자료(36건) 실시간 대조</h3>
+            <h3 class="panel-title">2. 나의 에이전트 대기 세션 기록 &amp; 논문 공개 데이터(36건) 실시간 대조</h3>
             <form id="session-log-form" class="form-stack" novalidate>
               <div class="form-row-3">
                 <div class="form-group">
@@ -501,8 +531,8 @@
             <div class="live-comparison-grid">
               <div class="comp-box">
                 <span class="comp-label">총 분석 세션 수</span>
-                <strong class="comp-val" id="comp-total-count">36건 (논문 원자료)</strong>
-                <span class="comp-sub" id="comp-added-count">사용자 추가: 0건</span>
+                <strong class="comp-val" id="comp-total-count">36건</strong>
+                <span class="comp-sub" id="comp-added-count">논문 36건 + 사용자 추가 0건</span>
               </div>
               <div class="comp-box">
                 <span class="comp-label">16초+ 비동기 화면 검수율</span>
@@ -516,9 +546,9 @@
               </div>
             </div>
 
-            <!-- 원자료 + 사용자 세션 테이블 (최근/필터 조회) -->
+            <!-- 원자료 + 사용자 세션 테이블 -->
             <div class="mini-table-header">
-              <span>📋 실측 세션 데이터 로그 (개인정보·비밀값 0건 검증 완료)</span>
+              <span>📋 공개/예시 실측 세션 로그 (타인 실명·비밀값 0건 · BRB-C06/C12)</span>
               <select id="table-zone-filter" class="form-select-xs" aria-label="대기 시간 구간 필터">
                 <option value="all">전체 구간 보기</option>
                 <option value="short">0~15초 (단순 수정)</option>
@@ -549,20 +579,73 @@
     </section>
 
     <!-- =====================================================================
-         논문 결과 ➔ 앱 기능 1:1 반영 명세 및 완주 체크리스트 증빙 섹션
+         [과제 안내 5/5 · BRB-C13, BRB-C14, BRB-C15]
+         짧은 확인 방법 (어디에 무엇이 있는지 / 어떻게 해 보는지 / 무엇이 나오면 통과인지)
+         & AI와 나의 판단 세 줄 & 논문 결과 1:1 대조표
     ====================================================================== -->
-    <section id="paper-evidence" class="section evidence-section alt-bg">
+    <section id="quick-verify" class="section evidence-section alt-bg">
       <div class="container">
         <div class="section-header-bar">
-          <div>
-            <span class="task-pill">증거 보관 기준 &amp; 통과 기준 전수 대조</span>
-            <h2 class="section-title">📊 10번 논문의 결과가 이 앱에 어떻게 실제로 쓰였는가 (BRB-C01 ~ C08)</h2>
-            <p class="section-desc">
-              논문이 “이렇다”고 밝힌 실측 수치와 규칙을 “그래서 이렇게 도울 수 있다”는 실행 코드로 1:1 변환한 명세입니다.
-            </p>
+          <span class="task-pill">과제 안내 3/5 ~ 5/5 완주 증빙 (BRB-C06 ~ BRB-C22)</span>
+          <h2 class="section-title">✅ 짧은 확인 방법 &amp; AI와 나의 판단 세 줄</h2>
+          <p class="section-desc">
+            처음 오신 분이나 평가자께서 1분 안에 확인하실 수 있도록 <strong>어디에 무엇이 있는지, 할 일 세 가지를 어떻게 해 보는지, 무엇이 나오면 통과인지</strong>를 한눈에 정리했습니다.
+          </p>
+        </div>
+
+        <div class="workbench-grid-2" style="margin-bottom: 1.5rem;">
+          <!-- 좌측: 짧은 확인 방법 3요소 (BRB-C13) -->
+          <div class="panel-card">
+            <h3 class="panel-title">🔍 1. 짧은 확인 방법 (BRB-C13 필수 3요소 완비)</h3>
+            <ul class="verify-guide-list">
+              <li>
+                <strong>① URL 및 실행 묶음(ZIP) 안 어디에 무엇이 있는가:</strong>
+                <p>
+                  • <strong>공개 URL (시크릿 창 즉시 열람):</strong> <a href="https://gksxogksxo1001-sketch.github.io/project13/" target="_blank" rel="noopener noreferrer">https://gksxogksxo1001-sketch.github.io/project13/</a><br>
+                  • <strong>12번 사이트 대표작 자리:</strong> <a href="https://gksxogksxo1001-sketch.github.io/project12/#projects" target="_blank" rel="noopener noreferrer">https://gksxogksxo1001-sketch.github.io/project12/#projects</a> (대표작 2 슬롯에 논문과 나란히 배치)<br>
+                  • <strong>묶음(`project13_submission_package.zip`) 내부:</strong> <code>index.html</code>(메인 앱), <code>app.js</code>(논문 수식·예외 방어 엔진), <code>style.css</code>(반응형 UI), <code>data/sample_sessions.json</code> &amp; <code>data/raw_data_36_sessions.csv</code>(예시·공개 데이터), <code>.env.example</code> &amp; <code>README.md</code>(환경변수 이름 및 실행법), <code>verify-app.js</code>(1초 자동 검증기).
+                </p>
+              </li>
+              <li>
+                <strong>② 사용자가 할 일 세 가지를 어떻게 해 보는가:</strong>
+                <p>
+                  • <strong>할 일 1 (`#task-1`):</strong> 대기 시간 입력창에 <code>25</code>(또는 예시 버튼)를 넣고 <code>[논문 규칙으로 행동 진단하기]</code>와 <code>[무폴링 타이머 시작]</code>을 클릭합니다.<br>
+                  • <strong>할 일 2 (`#task-2`):</strong> 3지선다 입력창에 텍스트를 넣거나 <code>[사례 A/B/C]</code> 버튼을 누른 뒤 <code>[1줄 핵심 + 위험도 요약]</code>을 클릭합니다.<br>
+                  • <strong>할 일 3 (`#task-3`):</strong> 에러 로그를 넣고 <code>[4줄 구조화 프롬프트 생성]</code> 및 <code>[내 세션 기록 추가]</code> 버튼을 클릭합니다.
+                </p>
+              </li>
+              <li>
+                <strong>③ 무엇이 나오면 통과(정상)인가:</strong>
+                <p>
+                  • <strong>할 일 1 통과 기준:</strong> `0~15초(IDE 주시 80.0%)`, `16~30초(화면 검수 54.5%)`, `31초+(화면 검수 66.7%)` 확률과 `시각적 폴링 방어 횟수(예: 2회 ➔ 0회)`가 표시되고 타이머가 작동하면 통과.<br>
+                  • <strong>할 일 2 통과 기준:</strong> 3개 옵션이 각각 `핵심 1줄 요약 + 위험도 뱃지 + 적합도 점수` 카드로 변환되고 `78.3% 중간 옵션 편향 경고`가 표시되면 통과.<br>
+                  • <strong>할 일 3 &amp; 예외 방어 통과 기준:</strong> 4줄 프롬프트가 출력되고 세션 수가 `36건 ➔ 37건`으로 늘어나며, 상단 예외 방어 버튼(`빈 값`, `음수 -45`, `문자열`) 클릭 시 앱이 멈추지 않고 노란색 보정 배너가 뜨면 통과.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 우측: AI와 나의 판단 세 줄 (BRB-C14) -->
+          <div class="panel-card">
+            <h3 class="panel-title">💡 2. AI와 나의 판단 세 줄 (BRB-C14 3분할 명세)</h3>
+            <div class="decision-cards-stack">
+              <div class="d-item">
+                <span class="d-tag tag-ai">① AI에게 맡긴 일</span>
+                <p>10번 논문의 36회 실측 원자료(CSV)와 [표 2] 확률 분포를 JavaScript 모듈로 구조화하고, Web Audio API 무폴링 타이머, 3지선다 요약 카드 UI, 예외 입력(빈 값·음수·문자열·초대형 수치) 방어 스캐폴딩 및 1초 자동 검증 스크립트(<code>verify-app.js</code>)를 작성하는 일을 맡겼습니다.</p>
+              </div>
+              <div class="d-item">
+                <span class="d-tag tag-human">② 내가 직접 판단한 일</span>
+                <p>논문의 결론 중 어떤 결과를 누구를 돕는 기능으로 바꿀지 정의한 ‘앱이 될 한 문장(BRB-C01)’과 ‘사용자가 할 일 3가지(① 16초 임계치 진단 및 12.7초 폴링 방어 청각 타이머, ② 78.3% 중간 옵션 편향을 교정하는 1줄·위험도 요약기, ③ 10분 디버깅 기반 4줄 구조화 프롬프트 및 36건 대조)’를 직접 기획하고 12번 포트폴리오 사이트의 대표작 2 슬롯에 직결했습니다.</p>
+              </div>
+              <div class="d-item">
+                <span class="d-tag tag-reject">③ AI 제안을 따르지 않은 일 (이유 포함)</span>
+                <p>AI는 초기 설계에서 외부 유료 LLM API 키 입력을 요구하는 챗봇 형태와 일반 뽀모도로(25분) 타이머를 제안했으나, 본 과제의 핵심은 <strong>“로그인·비밀값 없이 새 시크릿 창에서 즉시 열리고 논문의 실제 실측 수치(16초 임계치, 12.7초 시각적 폴링 91.7%, 78.3% 중간 옵션 편향)가 코드로 작동하는 것”</strong>이므로 외부 API 의존성과 무관한 일반 타이머를 전면 배제하고 논문 수식 기반의 무인증 독립 웹앱으로 직접 교정했습니다.</p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- 논문 결과 1:1 반영 대조표 -->
         <div class="evidence-table-wrap">
           <table class="evidence-table">
             <thead>
@@ -591,7 +674,7 @@
               <tr>
                 <td><strong>10분 자체 디버깅 + 에러 캡처 3~5줄 구조화 프롬프트</strong></td>
                 <td>3.2절 &amp; 5.2절 제언 3: 자체 디버깅 후 에러 컨텍스트 결합 시 1회차 해결률 상승</td>
-                <td><strong>[할 일 3]</strong> F12 콘솔 에러 로그와 반응형 가시성 요구사항을 결합한 <strong>4줄 표준 디버깅 프롬프트</strong>를 자동 생성하고 36건 원자료와 내 세션을 실시간 비교함.</td>
+                <td><strong>[할 일 3]</strong> F12 콘솔 에러 로그와 반응형 가시성 요구사항을 결합한 <strong>4줄 표준 디버깅 프롬프트</strong>를 자동 생성하고 36건 공개 데이터와 내 세션을 실시간 비교함.</td>
               </tr>
             </tbody>
           </table>
@@ -606,11 +689,11 @@
       <div>
         <p class="footer-title">⚡ FocusGuard AI — 과제 BR-B (내 논문을 반영한 애플리케이션)</p>
         <p class="footer-sub">
-          개발자: 주한태 (Ju Han-tae) · 연락처: <a href="mailto:gksxogksxo1001@gmail.com">gksxogksxo1001@gmail.com</a> · 개인정보 및 비밀값(API Key 등) 0건 준수 · 로그인 없이 즉시 실행
+          개발자: 주한태 (Ju Han-tae) · 공개 연락처: <a href="mailto:gksxogksxo1001@gmail.com">gksxogksxo1001@gmail.com</a> · 타인 실명 0건 · 비밀값(API Key 등) 0건 · 로그인 없이 시크릿 창 즉시 실행
         </p>
       </div>
       <div class="footer-links">
-        <a href="https://gksxogksxo1001-sketch.github.io/project12/" target="_blank" rel="noopener noreferrer">12번 포트폴리오 사이트 ↗</a>
+        <a href="https://gksxogksxo1001-sketch.github.io/project12/#projects" target="_blank" rel="noopener noreferrer">12번 포트폴리오 사이트 ↗</a>
         <a href="https://gksxogksxo1001-sketch.github.io/project12/paper/index.html" target="_blank" rel="noopener noreferrer">10번 논문 뷰어 ↗</a>
         <a href="https://github.com/gksxogksxo1001-sketch/project13" target="_blank" rel="noopener noreferrer">GitHub 저장소(project13) ↗</a>
       </div>

@@ -1,5 +1,5 @@
 /**
- * build-package.js — 과제 BR-B 제출용 실행 묶음(ZIP) 생성 스크립트
+ * build-package.js — 과제 BR-B 제출용 실행 묶음(ZIP) 생성 스크립트 (비밀번호 없음 · BRB-C22)
  */
 
 const fs = require('fs');
@@ -14,7 +14,7 @@ if (fs.existsSync(targetZip)) {
 }
 
 console.log('📦 Creating project13 submission zip package...');
-const psCommand = `$ProgressPreference = 'SilentlyContinue'; Compress-Archive -Path 'index.html', 'style.css', 'app.js', 'verify-app.js', 'README.md', 'package.json', 'data', 'doc' -DestinationPath '${ZIP_NAME}' -Force`;
+const psCommand = `$ProgressPreference = 'SilentlyContinue'; Compress-Archive -Path 'index.html', 'style.css', 'app.js', 'verify-app.js', 'README.md', 'package.json', '.env.example', 'data', 'doc' -DestinationPath '${ZIP_NAME}' -Force`;
 
 try {
   execSync(`powershell -Command "${psCommand}"`, { stdio: 'inherit' });

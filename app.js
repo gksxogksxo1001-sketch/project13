@@ -435,10 +435,10 @@
     if (themeToggle) {
       themeToggle.addEventListener('click', () => {
         const html = document.documentElement;
-        const current = html.getAttribute('data-theme') || 'dark';
+        const current = html.getAttribute('data-theme') || 'light';
         const next = current === 'dark' ? 'light' : 'dark';
         html.setAttribute('data-theme', next);
-        themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+        themeToggle.textContent = next === 'dark' ? '☀️ 라이트 모드' : '🌙 다크 모드';
       });
     }
 
@@ -1025,6 +1025,27 @@
     loadModalScenario('api');
     renderStructuredPrompt(false);
     renderSessionTable();
+
+    // 처음 온 사용자를 위한 원클릭 자동 시연 투어
+    const btnAutoTour = document.getElementById('btn-auto-tour');
+    const tourBanner = document.getElementById('tour-status-banner');
+    if (btnAutoTour && tourBanner) {
+      btnAutoTour.addEventListener('click', () => {
+        hideGlobalGuard();
+        tourBanner.classList.remove('hidden');
+        const secInput = document.getElementById('input-latency-sec');
+        if (secInput) secInput.value = '48';
+        renderLatencyDiagnosis(false);
+        loadModalScenario('dday');
+        renderStructuredPrompt(false);
+
+        const step1Section = document.getElementById('task-1');
+        if (step1Section) {
+          step1Section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        tourBanner.textContent = '✨ [자동 시연 완료] STEP 1(48초 복합 추론 진단) · STEP 2(3지선다 D-day 1줄 요약) · STEP 3(4줄 디버깅 프롬프트)가 모두 실행되었습니다! 아래에서 결과를 바로 확인해 보세요.';
+      });
+    }
   }
 
   if (typeof document !== 'undefined') {

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "단순 수정 (0~15초 구간 예시)",
+    "task": "[예시 데이터] 냉장고 재료 등록 모달 팝업 여백 및 버튼 정렬 수정",
+    "latencySec": 12,
+    "recommendedAction": "IDE 지속 주시 (80.0%)",
+    "visualPolling": "해당없음 (창 전환 불필요)",
+    "modalChoice": "단일제안 채택",
+    "note": "개인정보 및 비밀값이 제거된 공개 예시 데이터"
+  },
+  {
+    "id": 2,
+    "category": "중간 작업 (16~30초 구간 예시)",
+    "task": "[예시 데이터] 모바일 뷰포트(375px) 반응형 그리드 카드 줄바꿈 수정",
+    "latencySec": 25,
+    "recommendedAction": "웹사이트 UI 및 F12 콘솔 비동기 검수 (54.5%)",
+    "visualPolling": "무폴링 청각 타이머로 12.3초 주기 힐끔거림 방어 (2회 ➔ 0회)",
+    "modalChoice": "2번째 옵션 (CSS Grid minmax 표준 방식)",
+    "note": "개인정보 및 비밀값이 제거된 공개 예시 데이터"
+  },
+  {
+    "id": 3,
+    "category": "복합 추론 (31초 이상 구간 예시)",
+    "task": "[예시 데이터] 공공 영양성분 Open API 비동기 호출 및 결측치 예외 처리",
+    "latencySec": 48,
+    "recommendedAction": "웹사이트 UI 및 F12 콘솔 심층 검수 (66.7%)",
+    "visualPolling": "무폴링 청각 타이머로 12.9초 주기 힐끔거림 방어 (3회 ➔ 0회)",
+    "modalChoice": "2번째 옵션 (옵셔널 체이닝 + 0kcal 기본값 폴백)",
+    "note": "개인정보 및 비밀값이 제거된 공개 예시 데이터"
+  }
+]
