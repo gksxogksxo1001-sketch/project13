@@ -1,0 +1,13 @@
+{
+  "name": "project13-focusguard-ai",
+  "version": "1.0.0",
+  "description": "과제 BR-B: 10번 논문의 실측 결과를 실제로 쓰는 AI 에이전트 대기시간 분할 주의 방어 & 3지선다 요약 애플리케이션",
+  "main": "app.js",
+  "scripts": {
+    "test": "node verify-app.js",
+    "verify": "node verify-app.js",
+    "build-zip": "node build-package.js"
+  },
+  "author": "Ju Han-tae (gksxogksxo1001@gmail.com)",
+  "license": "MIT"
+}

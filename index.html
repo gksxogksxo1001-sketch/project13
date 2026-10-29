@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusGuard AI — 10번 논문 기반 AI 에이전트 대기시간 분할 주의 방어 & 3지선다 요약 앱 (과제 BR-B)</title>
+  <meta name="description" content="과제 10 실증 연구 논문의 결과(16초 임계치, 12.7초 시각적 폴링 91.7%, 3지선다 중간 옵션 편향 78.3%)를 실제로 적용해 AI 코딩 에이전트 대기 시간 중 웹 개발자의 집중 흐름을 지켜주는 애플리케이션입니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 상단 글로벌 네비게이션 -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <div class="brand-area">
+        <span class="brand-badge">과제 BR-B · 13번 대표작 앱</span>
+        <a href="#top" class="brand-title">⚡ FocusGuard AI <span class="brand-sub">논문 반영 워크벤치</span></a>
+      </div>
+      <nav class="nav-links" aria-label="주요 기능 이동">
+        <a href="#task-1" class="nav-link">① 대기시간 진단·타이머</a>
+        <a href="#task-2" class="nav-link">② 3지선다 1줄 요약기</a>
+        <a href="#task-3" class="nav-link">③ 프롬프트·36회 실측비교</a>
+        <a href="#paper-evidence" class="nav-link">📊 논문 규칙 대조</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://gksxogksxo1001-sketch.github.io/project12/" target="_blank" rel="noopener noreferrer" class="btn btn-xs btn-outline">
+          🏠 12번 포트폴리오 사이트 ↗
+        </a>
+        <button id="theme-toggle" class="btn-icon" title="다크/라이트 모드 전환" aria-label="테마 전환">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="main-content">
+    <!-- =====================================================================
+         첫 화면 (Hero Section): BRB-C01, BRB-C02, BRB-C03 필수 요소 완비
+         1) 10번 논문 제목 명시
+         2) "이 앱은 누구를 어떻게 돕습니다" ("○○인 사람이 △△할 때 이 앱이 □□을 해 준다") 한 문장 명시
+         3) 처음 온 사람이 설명 없이 바로 해 볼 수 있는 '사용자가 할 일 3가지'
+    ====================================================================== -->
+    <section class="hero-section">
+      <div class="container">
+        <!-- 논문 제목 배너 (BRB-C03) -->
+        <div class="paper-origin-banner">
+          <div class="origin-tag-row">
+            <span class="badge badge-primary">📄 기반 학술 논문 (과제 10)</span>
+            <span class="badge badge-success">단일 피험자 N=1 · 총 36회 세션 실측 데이터 100% 반영</span>
+            <a href="https://gksxogksxo1001-sketch.github.io/project12/paper/index.html" target="_blank" rel="noopener noreferrer" class="origin-paper-link">
+              논문 원문 웹 뷰어 열기 (로그인 불필요) ↗
+            </a>
+          </div>
+          <h2 class="paper-title-display">
+            『AI 에이전트 기반 웹 개발 환경에서 대기 시간 중 작업자의 분할 주의(Divided Attention)와 인터랙션 행동 분석
+            <span class="paper-title-sub">─ 자취생 맞춤형 웹서비스 '혼밥비서' 개발 사례를 중심으로 ─』 (주한태, 2026.10)</span>
+          </h2>
+        </div>
+
+        <!-- 앱 메인 타이틀 및 "누구를 어떻게 돕는가" 한 문장 (BRB-C01, BRB-C03) -->
+        <div class="hero-core-box">
+          <div class="hero-eyebrow">FROM PAPER TO APPLICATION · 논문이 밝힌 사실을 실무 도구로 바꾸다</div>
+          <h1 class="hero-main-title">
+            AI 코딩 에이전트 대기 시간 분할 주의 방어 &amp; 3지선다 의사결정 워크벤치
+          </h1>
+
+          <!-- 통과 기준 BRB-C01 & BRB-C03 핵심 한 문장 박스 -->
+          <div class="one-sentence-card" role="region" aria-label="이 앱이 누구를 어떻게 돕는가">
+            <div class="sentence-header">
+              <span class="sentence-badge">🎯 이 앱은 누구를 어떻게 돕는가 (앱이 될 한 문장 · BRB-C01 / BRB-C03)</span>
+            </div>
+            <p class="sentence-main">
+              <strong>“AI 코딩 에이전트(Antigravity, Copilot 등)와 협업하는 웹 개발자</strong>가 <strong>16초 이상의 응답 대기 시간 동안 에디터를 힐끔거리며 주의가 분산되거나(12.7초 주기 시각적 폴링 91.7%) 장문의 3지선다 모달에서 2번째 옵션만 편향 선택할 때(78.3%)</strong>, 이 앱이 논문의 36회 실측 결과와 3대 제언 규칙을 써서 <strong>① 대기 구간별 맞춤형 UI·콘솔 검수 가이드와 무폴링 청각 타이머 작동, ② 3지선다 장문 옵션의 '1줄 핵심 + 위험도' 요약 변환, ③ 에러 로그 결합 3~5줄 구조화 프롬프트 생성 및 36회 원자료 실시간 비교를 해 줍니다.”</strong>
+            </p>
+            <p class="sentence-sub">
+              💡 <strong>한 줄 요약:</strong> 이 앱은 AI 에이전트에게 코딩을 지시한 뒤 기다리는 개발자가 <strong>12.7초마다 화면을 힐끔거리는 주의 분할 비용</strong>과 <strong>78.3%의 중간 옵션 맹목 선택 편향</strong>을 줄이고, 대기 시간을 생산적인 자체 검수 시간으로 바꾸도록 돕습니다.
+            </p>
+          </div>
+
+          <!-- 통과 기준 BRB-C02: 사용자가 앱에서 실제로 할 일 세 가지 -->
+          <div class="three-tasks-overview">
+            <div class="tasks-header-row">
+              <h3 class="tasks-overview-title">🚀 처음 온 분을 위한 1분 안내 — 이 앱에서 사용자가 실제로 할 일 세 가지 (BRB-C02)</h3>
+              <span class="tasks-hint">아래 카드를 클릭하거나 바로 스크롤하여 설명 없이 즉시 실행해 보세요.</span>
+            </div>
+            <div class="tasks-grid-3">
+              <a href="#task-1" class="task-step-card">
+                <div class="step-num-row">
+                  <span class="step-num">할 일 1</span>
+                  <span class="step-rule-tag">논문 [표 2] 16초 임계치 &amp; 12.7초 폴링 규칙</span>
+                </div>
+                <h4>작업 대기 시간(초)을 넣고 ‘무폴링 청각 타이머 &amp; 검수 체크리스트’ 돌리기</h4>
+                <p>에이전트 예상 대기 시간(초)을 입력하면 <strong>0~15초(IDE 주시 80%) / 16~30초(화면 검수 54.5%) / 31초+(화면 검수 66.7%)</strong> 규칙에 맞춰 지금 할 F12·반응형 검수 할 일을 알려주고, 완료 비프음으로 <strong>12.7초마다 화면을 힐끔거리는 횟수</strong>를 0회로 줄여 줍니다.</p>
+                <span class="step-cta">할 일 1 바로 해보기 ↓</span>
+              </a>
+
+              <a href="#task-2" class="task-step-card">
+                <div class="step-num-row">
+                  <span class="step-num">할 일 2</span>
+                  <span class="step-rule-tag">논문 4.3절 78.3% 중간 옵션 편향 교정 규칙</span>
+                </div>
+                <h4>에이전트의 3지선다 장문 모달을 ‘1줄 핵심 + 위험도 뱃지’로 요약·비교하기</h4>
+                <p>에이전트가 띄운 복잡한 3가지 옵션을 넣거나 예시를 불러오면, 긴 설명 때문에 무심코 <strong>2번째 중간 옵션만 누르는 편향(78.3%)</strong>을 경고하고 옵션별 <strong>핵심 차이점 1줄·위험도·인지 부하 점수</strong>로 요약해 최적 선택지를 추천합니다.</p>
+                <span class="step-cta">할 일 2 바로 해보기 ↓</span>
+              </a>
+
+              <a href="#task-3" class="task-step-card">
+                <div class="step-num-row">
+                  <span class="step-num">할 일 3</span>
+                  <span class="step-rule-tag">논문 3.2절 구조화 프롬프트 &amp; 36회 원자료 대조</span>
+                </div>
+                <h4>에러 로그를 ‘3~5줄 구조화 프롬프트’로 변환하고 내 세션을 논문 36회 데이터와 비교하기</h4>
+                <p>10분 자체 디버깅 후 파악한 에러와 원하는 UI 흐름을 입력해 <strong>에이전트 1회차 성공률을 높이는 4줄 프롬프트</strong>를 만들고, 내가 방금 겪은 대기 세션을 기록해 <strong>논문 원자료(36건) 통계와 실시간 비교·내보내기</strong>를 수행합니다.</p>
+                <span class="step-cta">할 일 3 바로 해보기 ↓</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 통과 기준 BRB-C05: 잘못된 입력 방어 원클릭 테스트 바 -->
+          <div class="edge-test-bar" id="edge-test-bar">
+            <div class="edge-bar-left">
+              <span class="edge-badge">🛡️ BRB-C05 예외 방어 검증</span>
+              <span class="edge-title">잘못된 입력에도 앱이 멈추지 않는지 1초 만에 테스트해 보세요:</span>
+            </div>
+            <div class="edge-btn-group">
+              <button type="button" class="btn btn-xs btn-edge" data-edge="empty">빈 값("") 입력</button>
+              <button type="button" class="btn btn-xs btn-edge" data-edge="negative">음수(-45초) 입력</button>
+              <button type="button" class="btn btn-xs btn-edge" data-edge="nan">문자열("abc오류") 입력</button>
+              <button type="button" class="btn btn-xs btn-edge" data-edge="huge">초대형 값(99999초) 입력</button>
+              <button type="button" class="btn btn-xs btn-edge" data-edge="empty-modal">빈 3지선다 요약 실행</button>
+              <button type="button" class="btn btn-xs btn-outline" data-edge="reset">정상 기본값 복구</button>
+            </div>
+          </div>
+
+          <!-- 전역 입력 방어 상태 알림 배너 (잘못된 입력 발생 시 즉시 표시) -->
+          <div id="global-guard-alert" class="guard-alert-box hidden" role="status" aria-live="polite">
+            <div class="guard-alert-icon">🛡️</div>
+            <div class="guard-alert-content">
+              <strong id="guard-alert-title">입력값 자동 방어 및 안전 보정 작동 완료</strong>
+              <p id="guard-alert-desc">잘못된 입력이 감지되었으나 앱이 멈추지 않고 안전 범위로 자동 보정하여 결과를 산출했습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         [할 일 1] 대기 시간 구간 진단 & 무폴링(Zero-Polling) 청각 타이머
+         논문 [표 2] 실측 수치(0~15초 80.0%, 16~30초 54.5%, 31초+ 66.7%) 및
+         평균 12.7초 시각적 폴링(91.7%) 규칙 실제 적용
+    ====================================================================== -->
+    <section id="task-1" class="section workbench-section">
+      <div class="container">
+        <div class="section-header-bar">
+          <div>
+            <span class="task-pill">할 일 1 · BRB-C02 / BRB-C04</span>
+            <h2 class="section-title">⏱️ 에이전트 대기 시간 진단 &amp; 무폴링(Zero-Polling) 검수 타이머</h2>
+            <p class="section-desc">
+              논문 [표 2]의 <strong>16초 행동 전환 임계치</strong>와 <strong>평균 12.7초 시각적 폴링 주기(발생률 91.7%)</strong> 수식을 실제로 적용해, 대기 시간 동안 무엇을 해야 할지 안내하고 완료 알림음으로 불필요한 시선 분산을 막아줍니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="workbench-grid-2">
+          <!-- 좌측: 입력 및 프리셋 컨트롤 -->
+          <div class="panel-card">
+            <h3 class="panel-title">1. 에이전트 지시 작업 및 예상 대기 시간(초) 입력</h3>
+            
+            <div class="preset-group">
+              <span class="preset-label">⚡ 논문 실측 구간별 원클릭 예시:</span>
+              <div class="preset-buttons">
+                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="12" data-task="[냉장고] 단순 CSS z-index 및 모달 여백 수정">
+                  단순 수정 (12초 · 0~15초 구간)
+                </button>
+                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="25" data-task="[반응형 UI] 모바일 뷰포트(375px) 그리드 카드 줄바꿈 수정">
+                  중간 작업 (25초 · 16~30초 구간)
+                </button>
+                <button type="button" class="btn btn-xs btn-secondary latency-preset" data-sec="48" data-task="[식약처 API] 영양성분 비동기 fetch 파이프라인 및 에러 디버깅">
+                  복합 추론 (48초 · 31초+ 구간)
+                </button>
+              </div>
+            </div>
+
+            <form id="latency-form" class="form-stack" novalidate>
+              <div class="form-group">
+                <label for="input-task-name">지시한 개발 작업 내용 (비워두어도 자동 기본값 처리)</label>
+                <input type="text" id="input-task-name" class="form-input" value="[반응형 UI] 모바일 뷰포트(375px) 냉장고 그리드 카드 깨짐 수정" placeholder="예: 식약처 Open API 비동기 호출 및 F12 콘솔 에러 수정">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="input-latency-sec">예상 대기 시간 (초, 안전 범위: 1 ~ 600초)</label>
+                  <div class="input-with-unit">
+                    <input type="text" id="input-latency-sec" class="form-input mono-input" value="25" placeholder="예: 25 (음수·문자 입력 시 자동 보정)">
+                    <span class="unit-tag">초(sec)</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="input-sound-toggle">타이머 완료 청각 알림 (논문 5.2절 제언 1)</label>
+                  <select id="input-sound-toggle" class="form-select">
+                    <option value="on" selected>🔔 완료 및 폴링 방지 비프음 켜기 (권장)</option>
+                    <option value="off">🔕 무음 모드 (시각 알림만 표시)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" id="btn-analyze-latency" class="btn btn-primary">
+                  🔍 논문 규칙으로 행동 진단하기
+                </button>
+                <button type="button" id="btn-start-timer" class="btn btn-accent">
+                  ▶️ 무폴링 타이머 시작
+                </button>
+                <button type="button" id="btn-stop-timer" class="btn btn-outline" disabled>
+                  ⏹️ 정지/초기화
+                </button>
+              </div>
+            </form>
+
+            <!-- 입력 방어 피드백 박스 (할 일 1 전용) -->
+            <div id="latency-guard-msg" class="inline-guard-msg hidden" role="alert"></div>
+
+            <!-- 실시간 타이머 디스플레이 -->
+            <div class="timer-display-box" id="timer-box">
+              <div class="timer-top-row">
+                <span class="timer-status-badge" id="timer-status-badge">대기 진단 완료 · 타이머 준비</span>
+                <span class="timer-polling-saved" id="timer-polling-saved">예상 시각적 폴링 방어: <strong>2회</strong> (12.7초 주기 기준)</span>
+              </div>
+              <div class="timer-clock-row">
+                <div class="timer-digits" id="timer-digits">00:25</div>
+                <div class="timer-meta">
+                  <div class="timer-progress-track">
+                    <div class="timer-progress-fill" id="timer-progress-fill" style="width: 0%;"></div>
+                  </div>
+                  <p class="timer-guide-text" id="timer-guide-text">
+                    타이머를 시작하면 <strong>12.7초마다 IDE를 힐끔거리는 주의 분할 없이</strong> 안심하고 브라우저 검수를 수행할 수 있습니다. 종료 시 맑은 알림음이 울립니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 우측: 논문 [표 2] 기반 진단 결과 및 비동기 검수 체크리스트 -->
+          <div class="panel-card result-panel">
+            <div class="panel-header-flex">
+              <h3 class="panel-title">2. 논문 [표 2] 실측 기반 행동 처방 &amp; 검수 체크리스트</h3>
+              <span class="zone-badge zone-mid" id="result-zone-badge">16 ~ 30초 (중간 작업 구간)</span>
+            </div>
+
+            <!-- 논문 수치 대조 요약 카드 3개 -->
+            <div class="paper-stat-cards">
+              <div class="p-stat-card">
+                <span class="p-stat-label">논문 실측 주 행동 확률</span>
+                <strong class="p-stat-val" id="stat-dominant-prob">화면 검수 54.5%</strong>
+                <span class="p-stat-sub" id="stat-dominant-detail">표 2: 11회 중 6회 자체 검수</span>
+              </div>
+              <div class="p-stat-card">
+                <span class="p-stat-label">시각적 폴링(힐끔거림) 감축</span>
+                <strong class="p-stat-val text-accent" id="stat-polling-count">2.0회 ➔ 0회</strong>
+                <span class="p-stat-sub" id="stat-polling-detail">평균 12.3초 주기 경계 감시 제거</span>
+              </div>
+              <div class="p-stat-card">
+                <span class="p-stat-label">분할 주의 피로 위험도</span>
+                <strong class="p-stat-val" id="stat-fatigue-level">중간 (주의 분할 시작)</strong>
+                <span class="p-stat-sub" id="stat-fatigue-detail">16초 임계치 초과 구간</span>
+              </div>
+            </div>
+
+            <!-- 구간별 논문 실측 확률 분포 바 -->
+            <div class="prob-distribution-box">
+              <div class="prob-title-row">
+                <span>📊 해당 구간 논문 실측 행동 분포 ([표 2] N=36 원자료)</span>
+                <span class="mono-sm" id="prob-sample-n">구간 표본: N=11 세션</span>
+              </div>
+              <div class="prob-bars">
+                <div class="prob-bar-item">
+                  <div class="prob-label-row">
+                    <span>💻 IDE 지속 주시</span>
+                    <strong id="bar-label-ide">27.3% (3회)</strong>
+                  </div>
+                  <div class="prob-track"><div id="bar-fill-ide" class="prob-fill fill-ide" style="width: 27.3%;"></div></div>
+                </div>
+                <div class="prob-bar-item">
+                  <div class="prob-label-row">
+                    <span>🔍 웹사이트 UI / F12 콘솔 자체 검수</span>
+                    <strong id="bar-label-inspect">54.5% (6회)</strong>
+                  </div>
+                  <div class="prob-track"><div id="bar-fill-inspect" class="prob-fill fill-inspect" style="width: 54.5%;"></div></div>
+                </div>
+                <div class="prob-bar-item">
+                  <div class="prob-label-row">
+                    <span>📱 모바일 알림 확인</span>
+                    <strong id="bar-label-mobile">18.2% (2회)</strong>
+                  </div>
+                  <div class="prob-track"><div id="bar-fill-mobile" class="prob-fill fill-mobile" style="width: 18.2%;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 대기 시간 동안 수행할 맞춤형 비동기 검수 체크리스트 -->
+            <div class="checklist-box">
+              <div class="checklist-header">
+                <h4>✅ 지금 대기 시간 동안 수행할 추천 행동 체크리스트</h4>
+                <span class="checklist-progress" id="checklist-progress-text">0 / 3 완료 (0%)</span>
+              </div>
+              <p class="checklist-prescription" id="prescription-message">
+                논문 4.1절 결과: 대기 시간이 16초를 넘으면 유희로 이탈하기보다 <strong>브라우저 F12 콘솔 에러 및 모바일 뷰포트(375px)를 비동기 검수</strong>할 때 작업 복귀 비용(Mark et al., 2008)이 가장 낮습니다.
+              </p>
+              <ul class="action-checklist" id="dynamic-checklist">
+                <!-- JS에서 구간별로 동적 렌더링 및 체크 이벤트 연결 -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         [할 일 2] 3지선다 모달 '1줄 핵심 + 위험도' 요약기 & 78.3% 편향 교정기
+         논문 4.3절(23회 중 18회=78.3% 2번째 중간 옵션 선택 편향) 및
+         5.2절 제언 2(옵션당 핵심 차이점 1줄 + 위험도 요약 제시) 실제 적용
+    ====================================================================== -->
+    <section id="task-2" class="section workbench-section alt-bg">
+      <div class="container">
+        <div class="section-header-bar">
+          <div>
+            <span class="task-pill">할 일 2 · BRB-C02 / BRB-C04</span>
+            <h2 class="section-title">⚖️ 에이전트 3지선다 모달 ‘1줄 핵심 + 위험도’ 요약기 (78.3% 중간 옵션 편향 교정)</h2>
+            <p class="section-desc">
+              논문 4.3절에서 밝혀진 <strong>“1번은 너무 단순해서, 3번은 설명이 너무 길어 읽지 않고 78.3%(18/23회) 확률로 2번째 옵션만 고르는 편향”</strong>을 해결합니다. 에이전트의 3가지 옵션을 넣으면 <strong>핵심 차이점 1줄과 기술적 위험도</strong>로 요약해 줍니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 프리셋 시나리오 버튼 -->
+        <div class="preset-bar-card">
+          <span class="preset-label">📂 논문 속 실제 '혼밥비서' 3지선다 모달 사례 불러오기:</span>
+          <div class="preset-buttons">
+            <button type="button" class="btn btn-xs btn-secondary modal-preset" data-scenario="api">
+              사례 A: 식약처 영양성분 API null 에러 처리 (세션 #13)
+            </button>
+            <button type="button" class="btn btn-xs btn-secondary modal-preset" data-scenario="dday">
+              사례 B: 냉장고 유통기한 D-day 계산 로직 (세션 #2)
+            </button>
+            <button type="button" class="btn btn-xs btn-secondary modal-preset" data-scenario="chart">
+              사례 C: 영양소 섭취 비율 막대그래프 시각화 (세션 #25)
+            </button>
+          </div>
+        </div>
+
+        <div class="workbench-grid-2">
+          <!-- 좌측: 에이전트 3지선다 원문 입력 -->
+          <div class="panel-card">
+            <h3 class="panel-title">1. 에이전트가 제시한 3가지 옵션 텍스트 입력</h3>
+            <form id="modal-analyzer-form" class="form-stack" novalidate>
+              <div class="form-group">
+                <label for="opt-input-1">옵션 1 원문 (대개 단순 수정/하드코딩 제안)</label>
+                <textarea id="opt-input-1" class="form-textarea" rows="2" placeholder="옵션 1 내용을 입력하세요"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="opt-input-2">옵션 2 원문 (논문 실측 78.3%가 습관적으로 클릭하는 중간 옵션)</label>
+                <textarea id="opt-input-2" class="form-textarea" rows="3" placeholder="옵션 2 내용을 입력하세요"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="opt-input-3">옵션 3 원문 (대개 장문 설명·외부 라이브러리 도입 등으로 스킵되는 옵션)</label>
+                <textarea id="opt-input-3" class="form-textarea" rows="4" placeholder="옵션 3 내용을 입력하세요"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" id="btn-summarize-options" class="btn btn-primary">
+                  ⚡ 1줄 핵심 + 위험도 요약 및 편향 분석 실행
+                </button>
+                <button type="button" id="btn-clear-options" class="btn btn-outline">
+                  🗑️ 빈 값으로 지우기 (예외 방어 확인)
+                </button>
+              </div>
+            </form>
+            <div id="modal-guard-msg" class="inline-guard-msg hidden" role="alert"></div>
+          </div>
+
+          <!-- 우측: 1줄 요약 카드 + 위험도 뱃지 + 중간 옵션 편향 경고 -->
+          <div class="panel-card result-panel">
+            <div class="panel-header-flex">
+              <h3 class="panel-title">2. 논문 제언 5.2 규칙 적용 — 1줄 핵심 요약 &amp; 편향 교정 결과</h3>
+              <span class="badge badge-warning" id="bias-warning-badge">중간 옵션 편향 주의 (78.3%)</span>
+            </div>
+
+            <div class="bias-alert-banner" id="bias-analysis-banner">
+              <!-- JS 동적 업데이트 -->
+            </div>
+
+            <!-- 3개 옵션 요약 카드 리스트 -->
+            <div class="summarized-options-list" id="summarized-options-list">
+              <!-- JS 동적 렌더링 -->
+            </div>
+
+            <!-- 사용자가 최종 선택한 옵션 시뮬레이션 피드백 -->
+            <div class="decision-feedback-box" id="decision-feedback-box">
+              <span>👆 위 요약 카드 중 하나를 <strong>[이 옵션 채택하기]</strong>로 눌러 의사결정을 완료해 보세요.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         [할 일 3] 에러 로그 결합 3~5줄 구조화 프롬프트 생성기 &
+         나의 대기 세션 기록 vs 논문 36회 원자료 실시간 대조
+    ====================================================================== -->
+    <section id="task-3" class="section workbench-section">
+      <div class="container">
+        <div class="section-header-bar">
+          <div>
+            <span class="task-pill">할 일 3 · BRB-C02 / BRB-C04</span>
+            <h2 class="section-title">🛠️ 구조화 디버깅 프롬프트 생성 &amp; 논문 36회 실측 원자료 비교·기록</h2>
+            <p class="section-desc">
+              논문 3.2절·4.4절 결과(<strong>“10분 자체 디버깅 후 에러 로그와 UI/UX 가시성 요구를 결합한 3~5줄 구조화 프롬프트가 에이전트 연속 실패와 멘탈 소진을 방지”</strong>)를 도구화하고, 내 작업 세션을 논문 원자료(36회)에 추가해 실시간으로 통계를 비교합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="workbench-grid-2">
+          <!-- 좌측: 3~5줄 구조화 프롬프트 생성기 -->
+          <div class="panel-card">
+            <h3 class="panel-title">1. 에러 캡처 &amp; 콘솔 로그 결합 ‘4줄 구조화 프롬프트’ 생성기</h3>
+            <form id="prompt-builder-form" class="form-stack" novalidate>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="pb-module">대상 기능 / 모듈명</label>
+                  <input type="text" id="pb-module" class="form-input" value="[혼밥비서] 식약처 영양성분 API 연동 모달" placeholder="예: [냉장고] 유통기한 D-day 정렬">
+                </div>
+                <div class="form-group">
+                  <label for="pb-debug-min">사전 자체 디버깅 시간 (논문 기준: 10분)</label>
+                  <input type="text" id="pb-debug-min" class="form-input mono-input" value="10" placeholder="예: 10">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pb-error-log">F12 개발자 도구 콘솔 에러 또는 화면 깨짐 증상</label>
+                <input type="text" id="pb-error-log" class="form-input" value="TypeError: Cannot read properties of null (reading 'NUTR_CONT1') — 375px 모바일 뷰에서 결과 카드 넘침" placeholder="F12 콘솔 빨간색 에러 로그 또는 UI 증상 입력">
+              </div>
+
+              <div class="form-group">
+                <label for="pb-ux-goal">원하는 UI/UX 흐름 및 제약 조건</label>
+                <input type="text" id="pb-ux-goal" class="form-input" value="외부 무거운 라이브러리 추가 없이 옵셔널 체이닝과 기본값(0kcal) 폴백을 적용하고, 375px 모바일 가시성을 확보해 줘." placeholder="원하는 동작과 제약 조건 입력">
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">✨ 4줄 구조화 프롬프트 생성</button>
+                <button type="button" id="btn-copy-prompt" class="btn btn-secondary">📋 프롬프트 복사하기</button>
+              </div>
+            </form>
+
+            <div id="prompt-guard-msg" class="inline-guard-msg hidden" role="alert"></div>
+
+            <div class="generated-prompt-box">
+              <div class="gp-header">
+                <span>생성된 에이전트 지시 프롬프트 (논문 3.2절·5.2절 규격)</span>
+                <span class="gp-status" id="gp-copy-status">즉시 사용 가능</span>
+              </div>
+              <pre id="generated-prompt-output" class="gp-pre"></pre>
+            </div>
+          </div>
+
+          <!-- 우측: 내 세션 추가 & 논문 원자료(36건) 실시간 비교 -->
+          <div class="panel-card result-panel">
+            <h3 class="panel-title">2. 나의 에이전트 대기 세션 기록 &amp; 논문 원자료(36건) 실시간 대조</h3>
+            <form id="session-log-form" class="form-stack" novalidate>
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label for="log-sec">실측 대기 시간(초)</label>
+                  <input type="text" id="log-sec" class="form-input mono-input" value="32" placeholder="초 입력">
+                </div>
+                <div class="form-group">
+                  <label for="log-action">대기 중 실제 행동</label>
+                  <select id="log-action" class="form-select">
+                    <option value="혼밥비서 화면 검수" selected>🔍 웹사이트/F12 화면 검수</option>
+                    <option value="IDE 지속 주시">💻 IDE 지속 주시</option>
+                    <option value="모바일 확인">📱 모바일 알림 확인</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="log-choice">모달 선택 번호</label>
+                  <select id="log-choice" class="form-select">
+                    <option value="2번째 옵션 (요약 비교 후 선택)" selected>2번째 옵션</option>
+                    <option value="1번째 옵션 (단순 수정 채택)">1번째 옵션</option>
+                    <option value="3번째 옵션 (요약기로 발굴 채택)">3번째 옵션</option>
+                    <option value="단일제안 채택">단일제안 (모달 없음)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-accent">➕ 내 세션 기록 추가 및 논문 데이터와 비교</button>
+                <button type="button" id="btn-export-csv" class="btn btn-outline">📥 전체 데이터 CSV 다운로드</button>
+              </div>
+            </form>
+
+            <div id="session-guard-msg" class="inline-guard-msg hidden" role="alert"></div>
+
+            <!-- 실시간 집계 비교 배너 -->
+            <div class="live-comparison-grid">
+              <div class="comp-box">
+                <span class="comp-label">총 분석 세션 수</span>
+                <strong class="comp-val" id="comp-total-count">36건 (논문 원자료)</strong>
+                <span class="comp-sub" id="comp-added-count">사용자 추가: 0건</span>
+              </div>
+              <div class="comp-box">
+                <span class="comp-label">16초+ 비동기 화면 검수율</span>
+                <strong class="comp-val text-success" id="comp-inspect-rate">61.5%</strong>
+                <span class="comp-sub">논문 기준치: 61.5% (16/26회)</span>
+              </div>
+              <div class="comp-box">
+                <span class="comp-label">3지선다 2번째 옵션 선택률</span>
+                <strong class="comp-val text-warning" id="comp-middle-rate">78.3%</strong>
+                <span class="comp-sub">논문 기준치: 78.3% (18/23회)</span>
+              </div>
+            </div>
+
+            <!-- 원자료 + 사용자 세션 테이블 (최근/필터 조회) -->
+            <div class="mini-table-header">
+              <span>📋 실측 세션 데이터 로그 (개인정보·비밀값 0건 검증 완료)</span>
+              <select id="table-zone-filter" class="form-select-xs" aria-label="대기 시간 구간 필터">
+                <option value="all">전체 구간 보기</option>
+                <option value="short">0~15초 (단순 수정)</option>
+                <option value="mid">16~30초 (중간 작업)</option>
+                <option value="long">31초 이상 (복합 추론)</option>
+              </select>
+            </div>
+            <div class="table-scroll-box">
+              <table class="session-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>작업 내용</th>
+                    <th>대기(초)</th>
+                    <th>행동 유형</th>
+                    <th>폴링 주기</th>
+                    <th>모달 선택</th>
+                  </tr>
+                </thead>
+                <tbody id="session-table-body">
+                  <!-- JS 렌더링 -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         논문 결과 ➔ 앱 기능 1:1 반영 명세 및 완주 체크리스트 증빙 섹션
+    ====================================================================== -->
+    <section id="paper-evidence" class="section evidence-section alt-bg">
+      <div class="container">
+        <div class="section-header-bar">
+          <div>
+            <span class="task-pill">증거 보관 기준 &amp; 통과 기준 전수 대조</span>
+            <h2 class="section-title">📊 10번 논문의 결과가 이 앱에 어떻게 실제로 쓰였는가 (BRB-C01 ~ C08)</h2>
+            <p class="section-desc">
+              논문이 “이렇다”고 밝힌 실측 수치와 규칙을 “그래서 이렇게 도울 수 있다”는 실행 코드로 1:1 변환한 명세입니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="evidence-table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>10번 논문이 밝힌 실측 결과 ("이렇다")</th>
+                <th>논문 내 수치 · 규칙 출처</th>
+                <th>이 앱(FocusGuard AI)이 실제로 돕는 기능 ("그래서 이렇게 돕는다")</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>대기 시간 16초 임계치와 비동기 자체 검수 지배성</strong></td>
+                <td>[표 2] 0~15초 IDE 주시 <strong>80.0%</strong> / 16~30초 화면 검수 <strong>54.5%</strong> / 31초+ 화면 검수 <strong>66.7%</strong></td>
+                <td><strong>[할 일 1]</strong> 입력된 대기 시간(초)을 3구간으로 자동 분류하여 15초 이하는 창 전환 금지(컨텍스트 유지), 16초 이상은 맞춤형 F12 콘솔·375px 반응형 검수 체크리스트를 처방함.</td>
+              </tr>
+              <tr>
+                <td><strong>시각적 폴링(Visual Polling)에 따른 분할 주의 비용</strong></td>
+                <td>4.2절: 화면 전환 24회 중 <strong>91.7%(22회)</strong>에서 평균 <strong>12.7초(10~15초)</strong> 간격으로 IDE 경계 감시</td>
+                <td><strong>[할 일 1]</strong> Web Audio API 기반 <strong>무폴링 청각 타이머</strong>를 구현하여 <code>예상 힐끔거림 횟수 = round(T / 12.7 × 0.917)</code>를 계산하고 완료 비프음으로 시선 분산을 0회로 제거함.</td>
+              </tr>
+              <tr>
+                <td><strong>3지선다 모달에서 2번째(중간) 옵션 선택 편향</strong></td>
+                <td>4.3절 &amp; 5.2절 제언 2: 3지선다 23회 중 <strong>78.3%(18회)</strong> 2번 선택 (3번 장문 기피)</td>
+                <td><strong>[할 일 2]</strong> 에이전트의 3가지 옵션을 글자 수·인지 부하·위험도 키워드로 파싱하여 <strong>‘핵심 차이점 1줄 + 위험도 뱃지’</strong>로 요약하고 2번 옵션 맹목 선택을 교정함.</td>
+              </tr>
+              <tr>
+                <td><strong>10분 자체 디버깅 + 에러 캡처 3~5줄 구조화 프롬프트</strong></td>
+                <td>3.2절 &amp; 5.2절 제언 3: 자체 디버깅 후 에러 컨텍스트 결합 시 1회차 해결률 상승</td>
+                <td><strong>[할 일 3]</strong> F12 콘솔 에러 로그와 반응형 가시성 요구사항을 결합한 <strong>4줄 표준 디버깅 프롬프트</strong>를 자동 생성하고 36건 원자료와 내 세션을 실시간 비교함.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-title">⚡ FocusGuard AI — 과제 BR-B (내 논문을 반영한 애플리케이션)</p>
+        <p class="footer-sub">
+          개발자: 주한태 (Ju Han-tae) · 연락처: <a href="mailto:gksxogksxo1001@gmail.com">gksxogksxo1001@gmail.com</a> · 개인정보 및 비밀값(API Key 등) 0건 준수 · 로그인 없이 즉시 실행
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="https://gksxogksxo1001-sketch.github.io/project12/" target="_blank" rel="noopener noreferrer">12번 포트폴리오 사이트 ↗</a>
+        <a href="https://gksxogksxo1001-sketch.github.io/project12/paper/index.html" target="_blank" rel="noopener noreferrer">10번 논문 뷰어 ↗</a>
+        <a href="https://github.com/gksxogksxo1001-sketch/project13" target="_blank" rel="noopener noreferrer">GitHub 저장소 ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
